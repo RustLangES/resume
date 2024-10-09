@@ -8,8 +8,11 @@ const { marginTop = "0px" } = Astro.props;
 
 <style>
   .clickable {
-      @apply inline-flex flex-col justify-center items-center p-2
+    @apply inline-flex flex-col  justify-center items-center p-2
       px-5 w-36 shadow-md border-black border-[2px];
     box-shadow: 5px 5px 1px 1px #000;
+  }
+  .clickable:hover {
+    @apply hover:cursor-pointer
   }
 </style>
