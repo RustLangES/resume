@@ -3,16 +3,19 @@ import Clickable from "../components/Clickable.astro";
 ---
 
 <div class="mx-auto pt-48">
-  <div class="flex flex-col gap-28 justify-center items-center">
+  <div class="flex flex-col gap-5 justify-center items-center">
     <h2 class="font-bold text-3xl">APRENDER</h2>
 
-    <div class="flex gap-20">
-      <Clickable>RoadMap </Clickable>
-      <Clickable>El Libro</Clickable>
+    <!-- First row -->
+    <div class="flex justify-center items-center gap-8">
+      <Clickable>Roadmap</Clickable>
+      <Clickable marginTop="50px">El Libro</Clickable>
     </div>
-    <div class="flex gap-20">
+
+    <!-- Second row -->
+    <div class="flex justify-center items-center gap-8">
       <Clickable>Rust para c# Developers</Clickable>
-      <Clickable>Mas</Clickable>
+      <Clickable marginTop="50px">Mas</Clickable>
     </div>
   </div>
 </div>
