@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/work-sans");
+@import url("https://fonts.cdnfonts.com/css/alfa-slab-one");
+
+:root {
+  --background: #fed7aa;
+  --orange: #f97316;
+  --black: #000;
+}
+
+body {
+  background: var(--background);
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  @apply text-7xl font-normal;
+  color: var(--orange);
+  font-family: "Alfa Slab One", sans-serif;
+}
+
+h2 {
+  @apply text-4xl font-normal;
+  color: var(--black);
+  font-family: "Alfa Slab One", sans-serif;
+}
+
+h3 {
+  @apply text-4xl font-semibold;
+  color: var(--black);
+  font-family: "Work Sans", sans-serif;
+}
+
+h4 {
+  @apply text-3xl font-light;
+  color: var(--black);
+  font-family: "Work Sans", sans-serif;
+}
+
+p {
+  @apply text-lg font-normal;
+  color: var(--black);
+  font-family: "Work Sans", sans-serif;
+}
