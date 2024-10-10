@@ -1,10 +1,6 @@
 ---
-const { marginTop = "0px" } = Astro.props;
+const { marginTop = "0px", width = "9rem" } = Astro.props;
 ---
-
-<div class="clickable" style={`margin-top: ${marginTop}`}>
-  <slot />
-</div>
 
 <style>
   .clickable {
@@ -16,7 +12,6 @@ const { marginTop = "0px" } = Astro.props;
     @apply cursor-pointer;
   }
 </style>
-
-<div class="clickable">
+<div class="clickable" style={`margin-top: ${marginTop}; width: ${width}`}>
   <slot />
 </div>
