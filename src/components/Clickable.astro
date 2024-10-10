@@ -13,6 +13,10 @@ const { marginTop = "0px" } = Astro.props;
     box-shadow: 5px 5px 1px 1px #000;
   }
   .clickable:hover {
-    @apply hover:cursor-pointer;
+    @apply cursor-pointer;
   }
 </style>
+
+<div class="clickable">
+  <slot />
+</div>
