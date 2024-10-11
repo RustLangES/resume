@@ -1,6 +1,5 @@
 ---
 const { marginTop = "0px" } = Astro.props;
-import "../globals.css";
 ---
 
 <div class="clickable" style={`margin-top: ${marginTop}`}>
@@ -9,11 +8,15 @@ import "../globals.css";
 
 <style>
   .clickable {
-    @apply inline-flex flex-col  justify-center items-center p-2
+    @apply inline-flex  justify-center items-center p-2
       px-5 w-36 shadow-md border-black border-[2px];
     box-shadow: 5px 5px 1px 1px #000;
   }
   .clickable:hover {
-    @apply hover:cursor-pointer
+    @apply cursor-pointer;
   }
 </style>
+
+<div class="clickable">
+  <slot />
+</div>

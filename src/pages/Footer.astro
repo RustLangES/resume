@@ -1,0 +1,45 @@
+---
+import Clickable from "../components/Clickable.astro";
+import github_svg from "../../public/github.svg";
+import discord_svg from "../../public/discord.svg";
+import linkeding_svg from "../../public/Linkedin.svg";
+import telegram_svg from "../../public/Telegram.svg";
+import "../globals.css"
+---
+
+<div
+  class="flex flex-col justify-start pt-10 items-center"
+>
+  <h2 class="text-[30px] from-neutral-500">Se parte de la</h2>
+  <h2 class="text-[30px] text-orange-500">Comunidad</h2>
+  <div class="flex flex-col justify-center items-center gap-10 mt-20">
+    <div class="flex justify-between
+            items-center">
+      <Clickable>
+        <img src={github_svg.src} class="w-5" />
+        <p class="pl-5">Github</p>
+      </Clickable>
+    </div>
+
+    <div class="flex justify-between items-center gap-5">
+      <Clickable>
+        <img class="w-5" src={discord_svg.src} />
+        <p class="pl-5">Discord</p>
+      </Clickable>
+    </div>
+
+    <div class="flex justify-between items-center gap-5">
+      <Clickable>
+        <img class="w-5" src={linkeding_svg.src} />
+        <p class="pl-5">Linkedin</p>
+      </Clickable>
+    </div>
+
+    <div class="flex justify-between items-center gap-5">
+      <Clickable>
+        <img class="w-5" src={telegram_svg.src} />
+        <p class="pl-5">Telegram</p>
+      </Clickable>
+    </div>
+  </div>
+</div>
