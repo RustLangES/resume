@@ -1,0 +1,18 @@
+---
+import Clickable from "../components/Clickable.astro";
+import discord_svg from "../../public/discord.svg";
+---
+
+<div class="flex flex-col items-center justify-center gap-2 p-3">
+  <img src="./ferris.png" />
+  <h1 class="text-6xl">Rust Lang</h1>
+  <h4>Un espacio seguro</h4>
+  <h3>En Español</h3>
+
+  <a href="https://discord.gg/rustlanges" target="_blank">
+    <Clickable className="py-1 px-3">
+      <img src={discord_svg.src} alt="Discord" class="mr-2" />
+      Discord
+    </Clickable>
+  </a>
+</div>
