@@ -2,6 +2,9 @@
 import Projects from "./Projects.astro";
 import "../globals.css";
 import Clickable from "../components/Clickable.astro";
+import Capabilities from "./Capabilities.astro";
+import LearnSection from "./LearnSection.astro";
+import WhyRustSection from "./WhyRust.astro";
 ---
 
 <html lang="en">
@@ -10,6 +13,7 @@ import Clickable from "../components/Clickable.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#fed7aa" />
     <title>Astro</title>
 
     <!-- -->
@@ -19,9 +23,10 @@ import Clickable from "../components/Clickable.astro";
     />
     <link href="https://fonts.cdnfonts.com/css/work-sans" rel="stylesheet" />
   </head>
-  <body>
-    <Projects />
-    <!-- 
+  <body
+    class="min-h-screen min-w-screen flex flex-col justify-start items-center gap-10 pb-20"
+  >
+    <!--
     <h4>Un espacio seguro</h4>
     <h1>Astro</h1>
     <h3>En Español</h3>
@@ -32,6 +37,9 @@ import Clickable from "../components/Clickable.astro";
       <p>oli</p>
     </Clickable>
 
-    -->
+-->
+    <WhyRustSection />
+    <Capabilities />
+    <LearnSection />
   </body>
 </html>
