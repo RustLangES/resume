@@ -1,12 +1,13 @@
 ---
-import Projects from "../sections/Projects.astro";
 import "../globals.css";
-import Clickable from "../components/Clickable.astro";
 
 import Intro from "../sections/Intro.astro";
+import Projects from "../sections/Projects.astro";
 import Capabilities from "../sections/Capabilities.astro";
 import LearnSection from "../sections/LearnSection.astro";
 import WhyRustSection from "../sections/WhyRust.astro";
+import LanguageCapabilities from "../sections/LanguageCapabilities.astro";
+import Footer from "../sections/Footer.astro";
 ---
 
 <html lang="en">
@@ -25,12 +26,24 @@ import WhyRustSection from "../sections/WhyRust.astro";
     />
     <link href="https://fonts.cdnfonts.com/css/work-sans" rel="stylesheet" />
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            if ("localhost0.0.0.0::0192.168.0.1192.168.1.1".includes(document.location.hostname)) return;
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "ohcuqk87vi");
+      (function (c, l, a, r, i, t, y) {
+        if (
+          "localhost0.0.0.0::0192.168.0.1192.168.1.1".includes(
+            document.location.hostname,
+          )
+        )
+          return;
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "ohcuqk87vi");
     </script>
   </head>
   <body
@@ -50,8 +63,15 @@ import WhyRustSection from "../sections/WhyRust.astro";
     -->
     <Intro />
     <WhyRustSection />
+    <!-- Velocidad -->
+    <!-- Recursos predecibles -->
+    <!-- Seguro por diseño -->
+    <!-- Ecosistema moderno -->
     <Capabilities />
     <LearnSection />
+    <!-- Conectar (widget discord) -->
     <Projects />
+    <!-- Crea sin limites -->
+    <Footer />
   </body>
 </html>
