@@ -8,6 +8,7 @@ import LearnSection from "../sections/LearnSection.astro";
 import WhyRustSection from "../sections/WhyRust.astro";
 import LanguageCapabilities from "../sections/LanguageCapabilities.astro";
 import Footer from "../sections/Footer.astro";
+import Performance from "../sections/Performance.astro";
 ---
 
 <html lang="en">
@@ -49,21 +50,9 @@ import Footer from "../sections/Footer.astro";
   <body
     class="min-h-screen min-w-screen flex flex-col justify-start items-center gap-10 pb-20"
   >
-    <!--
-    <h4>Un espacio seguro</h4>
-    <h1>Astro</h1>
-    <h3>En Español</h3>
-
-    <h2>Aprender</h2>
-
-    <Clickable>
-      <p>oli</p>
-    </Clickable>
-
-    -->
     <Intro />
     <WhyRustSection />
-    <!-- Velocidad -->
+    <Performance />
     <!-- Recursos predecibles -->
     <!-- Seguro por diseño -->
     <!-- Ecosistema moderno -->
@@ -71,7 +60,7 @@ import Footer from "../sections/Footer.astro";
     <LearnSection />
     <!-- Conectar (widget discord) -->
     <Projects />
-    <!-- Crea sin limites -->
+    <LanguageCapabilities />
     <Footer />
   </body>
 </html>
