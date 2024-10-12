@@ -1,10 +1,25 @@
 ---
-const { className } = Astro.props;
+type Alignment =
+  | "end"
+  | "start"
+  | "center"
+  | "normal"
+  | "between"
+  | "around"
+  | "evenly"
+  | "stretch";
+const {
+  className,
+  justify = "center",
+}: {
+  justify?: Alignment;
+  className?: string;
+} = Astro.props;
 ---
 
 <style>
   .clickable {
-    @apply inline-flex justify-center items-center 
+    @apply inline-flex items-center 
       px-5 shadow-md border-black border-[2px];
     box-shadow: 5px 5px 1px 1px #000;
     transition-duration: 200ms;
@@ -14,6 +29,6 @@ const { className } = Astro.props;
     box-shadow: none;
   }
 </style>
-<div class=`clickable ${className}`>
+<div class=`clickable ${className} justify-${justify}`>
   <slot />
 </div>
