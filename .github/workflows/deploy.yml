@@ -31,8 +31,8 @@ jobs:
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         # env:
-          # YOUR_SECRET: ${{ secrets.YOUR_SECRET }}
-          # YOUR_OTHER_SECRET: ${{ secrets.YOUR_OTHER_SECRET }}
+        # YOUR_SECRET: ${{ secrets.YOUR_SECRET }}
+        # YOUR_OTHER_SECRET: ${{ secrets.YOUR_OTHER_SECRET }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

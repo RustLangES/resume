@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.cdnfonts.com/css/work-sans");
-@import url("https://fonts.cdnfonts.com/css/alfa-slab-one");
-
 :root {
   --background: #fed7aa;
   --orange: #f97316;
+  --light-orange: #ffedd5;
   --black: #000;
 }
 
