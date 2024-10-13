@@ -47,8 +47,10 @@ import Community from "../sections/Community.astro";
     class="min-h-screen min-w-screen flex flex-col justify-start items-center h-screen gap-10 pb-20"
   >
     <Intro />
-    <WhyRustSection />
-    <Community />
+    <div class="relative">
+      <WhyRustSection />
+      <Community />
+    </div>
     <Footer />
     <div class="fixed bottom-9 animate-bounce">
       <svg
