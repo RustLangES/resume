@@ -55,6 +55,6 @@ iframe {
 }
 
 .sec {
-  @apply sticky top-0 pt-20 h-[70vh];
+  @apply sticky top-0;
   background: var(--background);
 }

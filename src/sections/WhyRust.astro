@@ -4,22 +4,22 @@ import Clickable from "../components/Clickable.astro";
 ---
 
 <section id="reasons" class="relative">
-  <div class="flex flex-col justify-center items-center gap-5 sec">
-    <div class="flex flex-col justify-center mt-3 items-center gap-2">
+  <div class="flex flex-col items-center gap-5 sec h-[65vh]">
+    <div class="flex flex-col mt-32 items-center gap-2">
       <h3 class="text-[30px]">POR QUE</h3>
       <h2 class="text-orange-600 text-[50px]">RUST</h2>
     </div>
 
     <img class="relative w-[230px] h-[230px]" src="rust.png" />
   </div>
-  <div class="flex flex-col items-center justify-center p-4 gap-2 sec">
+  <div class="flex flex-col items-center justify-center p-4 gap-2 sec h-screen">
     <h2>MUY RAPIDO</h2>
     <img src={chart.src} />
     <p class="text-pretty p-2 text-center">
       Al ser un lenguaje de sistemas, Rust tiene excelente rendimiento.
     </p>
   </div>
-  <div class="flex flex-col items-center justify-center py-4 gap-2 sec">
+  <div class="flex flex-col items-center justify-center gap-2 sec h-screen">
     <h2>RECURSOS</h2>
     <h3 class="text-[25px]">PREDECIBLES</h3>
 
@@ -28,11 +28,13 @@ import Clickable from "../components/Clickable.astro";
       Olvidate de metricas dificiles de predecir y presupuestar
     </p>
   </div>
-  <div class="flex flex-col items-center justify-center py-4 gap-2 sec">
+  <div
+    class="flex flex-col items-center justify-center py-4 gap-2 sec h-screen"
+  >
     <h2>SEGURO</h2>
     <h3 class="text-[25px]">POR DISEÑO</h3>
 
-    <img src="secure.png" />
+    <img src="secure.png" class="max-h-[280px] self-end" />
     <p class="text-pretty py-2 px-6 text-center">
       Evita muchos problemas productivos antes de imaginarlos gracias al
       compilador.
