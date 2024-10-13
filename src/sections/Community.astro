@@ -1,0 +1,167 @@
+---
+import image1 from "../../public/rust_book.png";
+import image2 from "../../public/road_map.png";
+import Clickable from "../components/Clickable.astro";
+import { readTOMLFiles } from "../utils/readProjects";
+
+interface Project {
+  name: string[];
+  description: string;
+  link: string;
+  brand_src: string;
+  button_text: string;
+  button_link: string;
+  brand_as_letter: boolean;
+  button_bg_color: string;
+}
+
+const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
+---
+
+<style>
+  #projects-container:hover {
+    animation-play-state: paused;
+  }
+</style>
+
+<section id="community" class="relative">
+  <div class="flex flex-col justify-center items-center gap-5 relative sec">
+    <div class="flex flex-col justify-center mt-3 items-center gap-2">
+      <h2 class="text-[30px]">AQUÍ</h2>
+      <h2 class="text-orange-600 text-[50px]">Podras</h2>
+    </div>
+
+    <div class="relative w-fit mx-auto">
+      <img
+        src={image1.src}
+        alt="Image 1"
+        class="shadow-lg top-0 left-0 z-20 w-72 h-auto lg:w-80 md:w-96"
+      />
+      <img
+        src={image2.src}
+        alt="Image 2"
+        class="shadow-lg relative left-10 z-10 w-72 h-auto lg:w-96"
+      />
+    </div>
+  </div>
+
+  <div class="mx-auto p-10 sec">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <h2 class="text-[40px]">APRENDER</h2>
+
+      <!-- First row -->
+      <div class="flex justify-center items-center gap-8">
+        <Clickable>Roadmap</Clickable>
+        <Clickable className="mt-[50px]">El Libro</Clickable>
+      </div>
+
+      <!-- Second row -->
+      <div class="flex justify-center items-center gap-8">
+        <Clickable>Rust para c# Developers</Clickable>
+        <Clickable className="mt-[50px]">Mas</Clickable>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col justify-start items-center gap-5 sec h-full">
+    <h2>CONECTAR</h2>
+    <h3 class="text-[25px]">Y SER PARTE</h3>
+
+    <div class="flex flex-col justify-center items-center h-[40rem]">
+      <iframe
+        src="https://discord.com/widget?id=778674594856960012&theme=dark"
+        width="350"
+        height="500"
+        allowtransparency="true"
+        frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+      ></iframe>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center sec">
+    <h2>COMPARTIR</h2>
+    <h3>TUS PROYECTOS</h3>
+
+    <div
+      class="w-screen
+    min-h-[280px]
+    h-[30vh]
+    inline-flex
+    flex-nowrap overflow-hidden
+[mask-image:_linear-gradient(to_right,transparent_0,_black_32px,_black_calc(100%-32px),transparent_100%)]"
+    >
+      <ul
+        class="flex
+    items-center
+    justify-center
+    animate-infinite-scroll
+    p-5"
+        id="projects-container"
+      >
+        {
+          [...prebuiltData, ...prebuiltData].map((project: Project) => {
+            if (project.button_text.length > 0)
+              return (
+                <Clickable
+                  className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2"
+                  justify="normal"
+                >
+                  {project.brand_as_letter ? (
+                    <p class="flex flex-row justify-center items-center h-14 w-14 rounded-full self-start bg-[#ffedd5]">
+                      {project.brand_src}
+                    </p>
+                  ) : (
+                    <img
+                      alt="icon"
+                      src={`project-assets/${project.brand_src.substring(2)}`}
+                      class="h-14 w-14 rounded-full self-start"
+                    />
+                  )}
+
+                  <p class="font-bold  self-start">{project.name.join(" ")}</p>
+                  <p class="text-black text-pretty">{project.description}</p>
+                  <a
+                    href={project.button_link}
+                    target="_blank"
+                    class="self-start absolute bottom-0 mb-2"
+                  >
+                    <Clickable>{project.button_text}</Clickable>
+                  </a>
+                </Clickable>
+              );
+          })
+        }
+      </ul>
+    </div>
+
+    <a href="">
+      <Clickable className="text-1xl p-2"> Publica </Clickable>
+    </a>
+  </div>
+  <div class="flex flex-col justify-start items-center sec">
+    <h2>CREAR</h2>
+    <h3 class="text-[25px]">SIN LIMITES</h3>
+
+    <div class="flex flex-col justify-center items-center mt-10 px-4">
+      <div class="flex justify-center items-center gap-4">
+        <Clickable>Servicios</Clickable>
+        <Clickable className="mt-[50px]">Aplicaciones Multiplataforma</Clickable
+        >
+      </div>
+      <div class="flex justify-center items-center gap-4">
+        <Clickable>Videojuegos</Clickable>
+        <Clickable className="mt-[50px]">Inteligencia Artificial</Clickable>
+      </div>
+      <div class="mt-10 justify-center items-center">
+        <Clickable>Y mucho, mucho mas</Clickable>
+      </div>
+      <div
+        class="justify-center items-center flex mt-14 w-[70%] text-left font-medium"
+      >
+        <p>
+          Quizas Todavia te preguntes Que Puedes Crear con Rust, La Respuesta
+          Corta, Todo Lo Que Quieras.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
