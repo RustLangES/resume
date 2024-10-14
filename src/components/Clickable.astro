@@ -12,6 +12,7 @@ const {
   className,
   justify = "center",
 }: {
+  href?: string
   justify?: Alignment;
   className?: string;
 } = Astro.props;
@@ -19,16 +20,18 @@ const {
 
 <style>
   .clickable {
-    @apply inline-flex items-center 
-      px-5 shadow-md border-black border-[2px];
+    @apply inline-flex items-center
+      px-5 border-black border-[2px];
+    background: #ffedd5;
     box-shadow: 5px 5px 0px 1px #000;
     transition-duration: 200ms;
   }
   .clickable:hover {
     @apply cursor-pointer;
-    box-shadow: none;
+    box-shadow: 0px 0px 0px 1px #000;
   }
 </style>
+
 <div class=`clickable ${className} justify-${justify}`>
   <slot />
 </div>

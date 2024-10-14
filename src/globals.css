@@ -5,7 +5,7 @@
 :root {
   --background: #fed7aa;
   --orange: #f97316;
-  --light-orange: #ffedd5;
+  --light-orange: #ffce9a;
   --black: #000;
 }
 
@@ -52,6 +52,10 @@ p {
 iframe {
   width: 100%; /* Responsive width */
   height: 100%; /* Responsive height */
+}
+
+footer {
+    background: #FFCE9A;
 }
 
 .sec {

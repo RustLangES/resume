@@ -7,37 +7,34 @@ import linkeding_svg from "@assets/Linkedin.svg";
 import telegram_svg from "@assets/Telegram.svg";
 ---
 
-<section class="relative z-10">
-  <div class="flex flex-col justify-start pt-10 items-center sec h-[80vh]">
-    <p class="text-[30px] from-neutral-500 font-medium">Se parte de la</p>
-    <h2 class="text-[35px] text-orange-500">Comunidad</h2>
-    <p class="mt-10 font-medium text-xl">Y Descubre Como La</p>
-    <p class="font-medium text-xl">Comunidad Esta integrando</p>
-    <p class="font-medium text-xl">Rust en Distintas Areas</p>
-    <div class="flex flex-col justify-center items-center gap-10 mt-44">
-      <div class="flex justify-between
-            items-center gap-10">
-        <Clickable>
-          <img src={github_svg.src} class="w-5" />
-          <p class="pl-5">Github</p>
-        </Clickable>
+<footer class="relative z-10 flex flex-col justify-start pt-10 items-center w-full h-[80vh]">
+  <p class="text-[30px] from-neutral-500 font-medium">Se parte de la</p>
+  <h2 class="text-[35px] text-orange-500">Comunidad</h2>
+  <p class="mt-10 font-medium text-xl">Y Descubre Como La</p>
+  <p class="font-medium text-xl">Comunidad Esta integrando</p>
+  <p class="font-medium text-xl">Rust en Distintas Areas</p>
+  <div class="flex flex-col justify-center items-center gap-10 my-24">
+    <div class="flex justify-between items-center gap-10">
+      <Clickable>
+        <img src={github_svg.src} class="w-5" />
+        <p class="pl-5">Github</p>
+      </Clickable>
 
-        <Clickable>
-          <img class="w-5" src={discord_svg.src} />
-          <p class="pl-5">Discord</p>
-        </Clickable>
-      </div>
+      <Clickable>
+        <img class="w-5" src={discord_svg.src} />
+        <p class="pl-5">Discord</p>
+      </Clickable>
+    </div>
 
-      <div class="flex justify-between items-center gap-10">
-        <Clickable>
-          <img class="w-5" src={linkeding_svg.src} />
-          <p class="pl-5">Linkedin</p>
-        </Clickable>
-        <Clickable>
-          <img class="w-5" src={telegram_svg.src} />
-          <p class="pl-5">Telegram</p>
-        </Clickable>
-      </div>
+    <div class="flex justify-between items-center gap-10">
+      <Clickable>
+        <img class="w-5" src={linkeding_svg.src} />
+        <p class="pl-5">Linkedin</p>
+      </Clickable>
+      <Clickable>
+        <img class="w-5" src={telegram_svg.src} />
+        <p class="pl-5">Telegram</p>
+      </Clickable>
     </div>
   </div>
-</section>
+</footer>
