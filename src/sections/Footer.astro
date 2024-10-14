@@ -15,26 +15,13 @@ import telegram_svg from "@assets/Telegram.svg";
   <p class="font-medium text-xl">Rust en Distintas Areas</p>
   <div class="flex flex-col justify-center items-center gap-10 my-24">
     <div class="flex justify-between items-center gap-10">
-      <Clickable>
-        <img src={github_svg.src} class="w-5" />
-        <p class="pl-5">Github</p>
-      </Clickable>
-
-      <Clickable>
-        <img class="w-5" src={discord_svg.src} />
-        <p class="pl-5">Discord</p>
-      </Clickable>
+      <Clickable href="https://github.com/RustLangES" img={github_svg.src} text="Github" />
+      <Clickable href="https://discord.gg/rustlanges" img={discord_svg.src} text="Discord" />
     </div>
 
     <div class="flex justify-between items-center gap-10">
-      <Clickable>
-        <img class="w-5" src={linkeding_svg.src} />
-        <p class="pl-5">Linkedin</p>
-      </Clickable>
-      <Clickable>
-        <img class="w-5" src={telegram_svg.src} />
-        <p class="pl-5">Telegram</p>
-      </Clickable>
+      <Clickable href="https://linkedin.com/company/RustLangES" img={linkeding_svg.src} text="Linkedin" />
+      <Clickable href="https://t.me/rust_es" img={telegram_svg.src} text="Telegram"/>
     </div>
   </div>
 </footer>

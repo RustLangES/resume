@@ -25,8 +25,8 @@ const {
 
 <style>
   .clickable {
-    @apply inline-flex items-center
-      px-5 border-black border-[2px];
+    @apply inline-flex items-center text-center
+      py-2 px-4 border-black border-[2px];
     background: #ffedd5;
     box-shadow: 5px 5px 0px 1px #000;
     transition-duration: 200ms;
@@ -38,7 +38,7 @@ const {
 </style>
 
 {href &&
-  <a class=`clickable py-2 px-4 ${className} justify-${justify}` target="_blank" {...href}>
+  <a class=`clickable max-w-[150px] ${className} justify-${justify}` target="_blank" href={href}>
     {img && <img class="w-5" src={img} />}
     {text && <p class="pl-5">{text}</p>}
     <slot />
@@ -46,7 +46,7 @@ const {
 }
 
 {!href &&
-  <div class=`clickable py-2 px-4 ${className} justify-${justify}`>
+  <div class=`clickable ${className} justify-${justify}`>
     {img && <img class="w-5" src={img} />}
     {text && <p class="pl-5">{text}</p>}
     <slot />
