@@ -50,7 +50,19 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   </div>
 </Section>
 <Section title="Aprender">
-  <ClickableGrid slot="content" items={[[{t: "Roadmap"}, {t: "El Libro"}], [{t: "Rust para c# Developers"}, {t: "Mas"}]]} />
+  <ClickableGrid slot="content" items={[[{
+    t: "Roadmap",
+    href: 'https://roadmap.rustlang-es.org'
+  }, {
+    t: "El Libro",
+    href: 'https://book.rustlang-es.org'
+  }], [{
+    t: "Rust para c# Developers",
+    href: 'https://dotnet-book.rustlang-es.org'
+  }, {
+    t: "Mas",
+    href: 'https://rustlang-es.org/aprende'
+  }]]} />
 </Section>
 <Section title="Conectar" subtitle="y ser parte">
   <div
