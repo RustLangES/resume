@@ -9,10 +9,15 @@ type Alignment =
   | "evenly"
   | "stretch";
 const {
-  className,
+  img,
+  href,
+  text,
+  className = "",
   justify = "center",
 }: {
-  href?: string
+  img?: string;
+  text?: string;
+  href?: string;
   justify?: Alignment;
   className?: string;
 } = Astro.props;
@@ -28,10 +33,22 @@ const {
   }
   .clickable:hover {
     @apply cursor-pointer;
-    box-shadow: 0px 0px 0px 1px #000;
+    box-shadow: none;
   }
 </style>
 
-<div class=`clickable ${className} justify-${justify}`>
-  <slot />
-</div>
+{href &&
+  <a class=`clickable py-2 px-4 ${className} justify-${justify}` target="_blank" {...href}>
+    {img && <img class="w-5" src={img} />}
+    {text && <p class="pl-5">{text}</p>}
+    <slot />
+  </a>
+}
+
+{!href &&
+  <div class=`clickable py-2 px-4 ${className} justify-${justify}`>
+    {img && <img class="w-5" src={img} />}
+    {text && <p class="pl-5">{text}</p>}
+    <slot />
+  </div>
+}
