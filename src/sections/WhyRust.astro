@@ -38,5 +38,17 @@ import ClickableGrid from "@layouts/ClickableGrid.astro";
   subtitle="Moderno"
   description="Todas las herramientas que necesitas, Ya incluidas en la instalación"
 >
-  <ClickableGrid slot="content" items={[[{t: 'Formatter'}, {t: 'Gestor de Paquetes'}], [{t: 'Reglas para Calidad'}, {t: 'Y mucho más'}]]} />
+  <ClickableGrid slot="content" items={[[{
+      t: 'Formatter',
+      href: 'https://rust-lang.github.io/rustfmt'
+    }, {
+      t: 'Gestor de Paquetes',
+      href: 'https://doc.rust-lang.org/cargo'
+    }], [{
+      t: 'Reglas para Calidad',
+      href: 'https://doc.rust-lang.org/clippy'
+    }, {
+      t: 'Y mucho más',
+      href: 'https://github.com/rust-unofficial/awesome-rust'
+    }]]} />
 </Section>

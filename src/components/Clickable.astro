@@ -12,12 +12,14 @@ const {
   img,
   href,
   text,
+  maxWidth = true,
   className = "",
   justify = "center",
 }: {
   img?: string;
   text?: string;
   href?: string;
+  maxWidth?: bool;
   justify?: Alignment;
   className?: string;
 } = Astro.props;
@@ -25,7 +27,7 @@ const {
 
 <style>
   .clickable {
-    @apply inline-flex items-center text-center
+    @apply inline-flex items-center
       py-2 px-4 border-black border-[2px];
     background: #ffedd5;
     box-shadow: 5px 5px 0px 1px #000;
@@ -38,7 +40,7 @@ const {
 </style>
 
 {href &&
-  <a class=`clickable max-w-[150px] ${className} justify-${justify}` target="_blank" href={href}>
+  <a class=`clickable ${maxWidth ? "max-w-[150px]" : ""} ${className} justify-${justify} text-${justify}` target="_blank" href={href}>
     {img && <img class="w-5" src={img} />}
     {text && <p class="pl-5">{text}</p>}
     <slot />
@@ -46,7 +48,7 @@ const {
 }
 
 {!href &&
-  <div class=`clickable ${className} justify-${justify}`>
+  <div class=`clickable ${className} justify-${justify} text-${justify}`>
     {img && <img class="w-5" src={img} />}
     {text && <p class="pl-5">{text}</p>}
     <slot />

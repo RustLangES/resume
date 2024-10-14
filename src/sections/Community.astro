@@ -87,7 +87,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
             return (
               <Clickable
                 className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2"
-                justify="normal"
+                justify="start"
               >
                 {project.brand_as_letter ? (
                   <p class="flex flex-row justify-center items-center h-14 w-14 rounded-full self-start bg-[#ffedd5]">
@@ -103,13 +103,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
 
                 <p class="font-bold  self-start">{project.name.join(" ")}</p>
                 <p class="text-black text-pretty">{project.description}</p>
-                <a
-                  href={project.button_link}
-                  target="_blank"
-                  class="self-start absolute bottom-0 mb-2"
-                >
-                  <Clickable>{project.button_text}</Clickable>
-                </a>
+                <Clickable href={project.button_link} maxWidth={false} className="self-start absolute bottom-0 mb-2">{project.button_text}</Clickable>
               </Clickable>
             );
         })
@@ -130,5 +124,20 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   height="[80vh]"
   className="z-10"
 >
-  <ClickableGrid slot="content" items={[[{t: 'Servicios'}, {t: 'Aplicaciones Multiplataforma'}], [{t: 'Videojuegos'}, {t: 'Inteligencia Artificial'}], [{t: 'Y mucho, mucho más'}]]} />
+  <ClickableGrid slot="content" items={[[{
+    t: 'Servicios',
+    href: 'https://github.com/flosse/rust-web-framework-comparison'
+  }, {
+    t: 'Aplicaciones Multiplataforma',
+    href: 'https://areweguiyet.com/#ecosystem'
+  }], [{
+    t: 'Videojuegos',
+    href: 'https://arewegameyet.rs/#ecosystem'
+  }, {
+    t: 'Inteligencia Artificial',
+    href: 'https://www.arewelearningyet.com/'
+  }], [{
+    t: 'Y mucho, mucho más',
+    href: 'https://awesome-rust.com/'
+  }]]} />
 </Section>
