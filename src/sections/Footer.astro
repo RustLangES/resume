@@ -5,6 +5,8 @@ import github_svg from "@assets/github.svg";
 import discord_svg from "@assets/discord.svg";
 import linkeding_svg from "@assets/Linkedin.svg";
 import telegram_svg from "@assets/Telegram.svg";
+
+import ClickableGrid from "@layouts/ClickableGrid.astro";
 ---
 
 <footer class="relative z-10 flex flex-col justify-start pt-10 items-center w-full h-[80vh]">
@@ -13,15 +15,24 @@ import telegram_svg from "@assets/Telegram.svg";
   <p class="mt-10 font-medium text-xl">Y Descubre Como La</p>
   <p class="font-medium text-xl">Comunidad Esta integrando</p>
   <p class="font-medium text-xl">Rust en Distintas Areas</p>
-  <div class="flex flex-col justify-center items-center gap-10 my-24">
-    <div class="flex justify-between items-center gap-10">
-      <Clickable href="https://github.com/RustLangES" img={github_svg.src} text="Github" />
-      <Clickable href="https://discord.gg/rustlanges" img={discord_svg.src} text="Discord" />
-    </div>
-
-    <div class="flex justify-between items-center gap-10">
-      <Clickable href="https://linkedin.com/company/RustLangES" img={linkeding_svg.src} text="Linkedin" />
-      <Clickable href="https://t.me/rust_es" img={telegram_svg.src} text="Telegram"/>
-    </div>
-  </div>
+  <ClickableGrid className="my-24" items={[
+    [{
+      text: 'Github',
+      img: github_svg.src,
+      href: 'https://github.com/RustLangES'
+    }, {
+      text: 'Discord',
+      img: discord_svg.src,
+      href: 'https://discord.gg/rustlanges'
+    }],
+    [{
+      text: 'Linkedin',
+      img: linkeding_svg.src,
+      href: 'https://linkedin.com/company/RustLangES'
+    }, {
+      text: 'Telegram',
+      img: telegram_svg.src,
+      href: 'https://t.me/rust_es'
+    }]
+  ]} />
 </footer>

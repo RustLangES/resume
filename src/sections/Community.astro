@@ -3,6 +3,7 @@ import image1 from "../../public/rust_book.png";
 import image2 from "../../public/road_map.png";
 import Clickable from "../components/Clickable.astro";
 import Section from "@layouts/section.astro";
+import ClickableGrid from "@layouts/ClickableGrid.astro";
 import { readTOMLFiles } from "../utils/readProjects";
 
 interface Project {
@@ -44,19 +45,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   </div>
 </Section>
 <Section title="Aprender">
-  <Fragment slot="content">
-    <!-- First row -->
-    <div class="flex justify-center items-center gap-8">
-      <Clickable>Roadmap</Clickable>
-      <Clickable className="mt-[50px]">El Libro</Clickable>
-    </div>
-
-    <!-- Second row -->
-    <div class="flex justify-center items-center gap-8">
-      <Clickable>Rust para c# Developers</Clickable>
-      <Clickable className="mt-[50px]">Mas</Clickable>
-    </div>
-  </Fragment>
+  <ClickableGrid slot="content" items={[[{t: "Roadmap"}, {t: "El Libro"}], [{t: "Rust para c# Developers"}, {t: "Mas"}]]} />
 </Section>
 <Section title="Conectar" subtitle="y ser parte">
   <div
@@ -141,17 +130,5 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   height="[80vh]"
   className="z-10"
 >
-  <div slot="content" class="flex flex-col justify-center items-center">
-    <div class="flex justify-center items-center gap-10">
-      <Clickable>Servicios</Clickable>
-      <Clickable className="mt-[50px]">Aplicaciones Multiplataforma</Clickable>
-    </div>
-    <div class="flex justify-center items-center gap-10">
-      <Clickable>Videojuegos</Clickable>
-      <Clickable className="mt-[50px]">Inteligencia Artificial</Clickable>
-    </div>
-    <div class="mt-10 justify-center items-center">
-      <Clickable>Y mucho, mucho mas</Clickable>
-    </div>
-  </div>
+  <ClickableGrid slot="content" items={[[{t: 'Servicios'}, {t: 'Aplicaciones Multiplataforma'}], [{t: 'Videojuegos'}, {t: 'Inteligencia Artificial'}], [{t: 'Y mucho, mucho más'}]]} />
 </Section>
