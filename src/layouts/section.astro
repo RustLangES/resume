@@ -1,4 +1,6 @@
 ---
+import Image from "astro:assets";
+
 type SectionType = "Normal" | "TitleOrange";
 type ImageAlign = "center" | "right";
 
@@ -13,6 +15,7 @@ const {
   className,
 }: {
   type?: SectionType;
+  imageAlign?: ImageAlign;
   title?: string;
   subtitle?: string;
   description?: string;
@@ -34,7 +37,7 @@ const {
     )
   }
   {
-  (type === "TitleOrange") && (
+    type === "TitleOrange" && (
       <div class="flex flex-col justify-center mt-3 items-center gap-2">
         {title && <h3 class="text-[30px]">{title.toUpperCase()}</h3>}
         {subtitle && (
@@ -44,7 +47,14 @@ const {
     )
   }
 
-  {image && <img src={image} class={imageAlign == "right" ? "max-w-[70vw] ml-[30vw]" : ""} />}
+  {
+    image && (
+      <img
+        src={image}
+        class={imageAlign == "right" ? "max-w-[70vw] ml-[30vw]" : ""}
+      />
+    )
+  }
   <slot name="content" />
   {
     description && (
