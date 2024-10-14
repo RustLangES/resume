@@ -1,9 +1,11 @@
 ---
 type SectionType = "Normal" | "TitleOrange";
+type ImageAlign = "center" | "right";
 
 const {
   type = "Normal",
   height = "screen",
+  imageAlign = "center",
   title,
   subtitle,
   description,
@@ -42,7 +44,7 @@ const {
     )
   }
 
-  {image && <img src={image} class="max-h-[270px]" />}
+  {image && <img src={image} class={imageAlign == "right" ? "max-w-[70vw] ml-[30vw]" : ""} />}
   <slot name="content" />
   {
     description && (
