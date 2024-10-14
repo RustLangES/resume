@@ -48,3 +48,13 @@ p {
   color: var(--black);
   font-family: "Work Sans", sans-serif;
 }
+
+iframe {
+  width: 100%; /* Responsive width */
+  height: 100%; /* Responsive height */
+}
+
+.sec {
+  @apply sticky top-0;
+  background: var(--background);
+}

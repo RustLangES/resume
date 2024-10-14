@@ -1,36 +1,55 @@
 ---
 type SectionType = "Normal" | "TitleOrange";
+type ImageAlign = "center" | "right";
 
 const {
   type = "Normal",
+  height = "screen",
+  imageAlign = "center",
   title,
   subtitle,
   description,
   image,
+  className,
 }: {
   type?: SectionType;
-  title: string;
+  title?: string;
   subtitle?: string;
   description?: string;
   image?: string;
+  height?: string;
+  className?: string;
 } = Astro.props;
 ---
-<div class="flex flex-col items-center justify-center py-4 gap-2">
-  {type == "Normal" &&
-  <div class="flex flex-col justify-center mt-3 items-center gap-2">
-    <h2>{title.toUpperCase()}</h2>
-    {subtitle && <h3 class="text-[25px]">{subtitle.toUpperCase()}</h3>}
-  </div>
+
+<div
+  class={`flex flex-col items-center justify-center gap-2 sec h-${height} ${className}`}
+>
+  {
+    type == "Normal" && (
+      <div class="flex flex-col justify-center items-center gap-2">
+        {title && <h2>{title.toUpperCase()}</h2>}
+        {subtitle && <h3 class="text-[25px]">{subtitle.toUpperCase()}</h3>}
+      </div>
+    )
   }
-  {type == "TitleOrange" &&
-  <div class="flex flex-col justify-center mt-3 items-center gap-2">
-    <h3 class="text-[30px]">{title.toUpperCase()}</h3>
-    {subtitle && <h2 class="text-orange-600 text-[50px]">{subtitle.toUpperCase()}</h2>}
-  </div>
+  {
+  (type === "TitleOrange") && (
+      <div class="flex flex-col justify-center mt-3 items-center gap-2">
+        {title && <h3 class="text-[30px]">{title.toUpperCase()}</h3>}
+        {subtitle && (
+          <h2 class="text-orange-600 text-[50px]">{subtitle.toUpperCase()}</h2>
+        )}
+      </div>
+    )
   }
 
-  {image && <img src={image} />}
+  {image && <img src={image} class={imageAlign == "right" ? "max-w-[70vw] ml-[30vw]" : ""} />}
   <slot name="content" />
-  {description && <p class="max-w-[80%] mt-3 py-2 text-pretty text-center">{description}</p>}
-  <slot name="description"/>
+  {
+    description && (
+      <p class="max-w-[80%] mt-3 py-2 text-pretty text-center">{description}</p>
+    )
+  }
+  <slot name="description" />
 </div>

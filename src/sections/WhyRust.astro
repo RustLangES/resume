@@ -1,4 +1,50 @@
 ---
+import chart from "@assets/rust_performance.svg";
+import Clickable from "@components/Clickable.astro";
 import Section from "@layouts/section.astro";
 ---
-<Section type="TitleOrange" title="Por que" subtitle="Rust" image="rust.png" />
+
+<div class="flex flex-col justify-center mt-3 items-center gap-2 h-[100px] sec z-10">
+  <h3 class="text-[30px]">POR QUE</h3>
+  <h2 class="text-orange-600 text-[50px]">RUST</h2>
+</div>
+<Section
+  type="TitleOrange"
+  image="rust.png"
+  height="[65vh]"
+/>
+<Section
+  title="MUY RÁPIDO"
+  image="rust_performance.svg"
+  description="Al ser un lenguaje de sistemas, Rust tiene excelente rendimiento"
+/>
+<Section
+  title="Recursos"
+  subtitle="Predecibles"
+  image="predictability.png"
+  description="Olvidate e métricas difíciles de predicir y presupuestar"
+/>
+<Section
+  image="secure.png"
+  imageAlign="right"
+  title="Seguro"
+  subtitle="Por Diseño"
+  description="Evita muchos problemas productivos antes de imaginarlos gracias al compilador."
+/>
+
+<Section
+  title="Ecosistema"
+  subtitle="Moderno"
+  description="Todas las herramientas que necesitas, Ya incluidas en la instalación"
+>
+  <Fragment slot="content">
+    <div class="flex justify-center items-center gap-8">
+      <Clickable className="px-2 py-4"> Formatter </Clickable>
+      <Clickable className="px-2 py-4"> Gestor de paquetes </Clickable>
+    </div>
+    <div class="flex justify-center items-center gap-6">
+      <Clickable className="px-2 py-4"> Reglas para calidad </Clickable>
+      <Clickable className="px-2 py-4"> Y mucho más </Clickable>
+    </div>
+  </Fragment>
+</Section>
