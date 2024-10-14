@@ -1,0 +1,37 @@
+---
+import Clickable from '@components/Clickable.astro';
+
+interface ClickableItem {
+  t?: string;
+  text?: string;
+  href?: string;
+  img?: string;
+  alt?: string;
+  className?: string;
+}
+
+interface Props {
+  items: ClickableItem[][];
+  className?: string;
+}
+
+const { items, className = '' } = Astro.props;
+---
+
+<div class={`flex flex-col gap-2 ${className}`}>
+  {items.map((row, rowIndex) => (
+    <div class="flex justify-center items-center gap-8">
+      {row.map((item, colIndex) => (
+        <Clickable
+          href={item.href}
+          img={item.img}
+          text={item.text}
+          alt={item.alt}
+          className={`${colIndex % 2 === 1 ? 'mt-[50px]' : 'mt-[25px]'} ${item.className || ''}`}
+        >
+          {item.t}
+        </Clickable>
+      ))}
+    </div>
+  ))}
+</div>

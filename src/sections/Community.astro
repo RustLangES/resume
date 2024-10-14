@@ -3,6 +3,7 @@ import image1 from "../../public/rust_book.png";
 import image2 from "../../public/road_map.png";
 import Clickable from "../components/Clickable.astro";
 import Section from "@layouts/section.astro";
+import ClickableGrid from "@layouts/ClickableGrid.astro";
 import { readTOMLFiles } from "../utils/readProjects";
 
 interface Project {
@@ -49,19 +50,19 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   </div>
 </Section>
 <Section title="Aprender">
-  <Fragment slot="content">
-    <!-- First row -->
-    <div class="flex justify-center items-center gap-8">
-      <Clickable>Roadmap</Clickable>
-      <Clickable className="mt-[50px]">El Libro</Clickable>
-    </div>
-
-    <!-- Second row -->
-    <div class="flex justify-center items-center gap-8">
-      <Clickable>Rust para c# Developers</Clickable>
-      <Clickable className="mt-[50px]">Mas</Clickable>
-    </div>
-  </Fragment>
+  <ClickableGrid slot="content" items={[[{
+    t: "Roadmap",
+    href: 'https://roadmap.rustlang-es.org'
+  }, {
+    t: "El Libro",
+    href: 'https://book.rustlang-es.org'
+  }], [{
+    t: "Rust para c# Developers",
+    href: 'https://dotnet-book.rustlang-es.org'
+  }, {
+    t: "Mas",
+    href: 'https://rustlang-es.org/aprende'
+  }]]} />
 </Section>
 <Section title="Conectar" subtitle="y ser parte">
   <div
@@ -96,44 +97,37 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     justify-center
     animate-infinite-scroll
     p-5"
-        id="projects-container"
-      >
-        {
-          [...prebuiltData, ...prebuiltData].map((project: Project) => {
-            if (project.button_text.length > 0)
-              return (
-                <Clickable
-                  className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2"
-                  justify="normal"
-                >
-                  {project.brand_as_letter ? (
-                    <p class="flex flex-row justify-center items-center h-14 w-14 rounded-full self-start bg-[#ffedd5]">
-                      {project.brand_src}
-                    </p>
-                  ) : (
-                    <img
-                      alt="icon"
-                      src={`project-assets/${project.brand_src.substring(2)}`}
-                      class="h-14 w-14 rounded-full self-start"
-                    />
-                  )}
+      id="projects-container"
+    >
+      {
+        [...prebuiltData, ...prebuiltData].map((project: Project) => {
+          if (project.button_text.length > 0)
+            return (
+              <Clickable
+                className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2"
+                justify="start"
+              >
+                {project.brand_as_letter ? (
+                  <p class="flex flex-row justify-center items-center h-14 w-14 rounded-full self-start bg-[#ffedd5]">
+                    {project.brand_src}
+                  </p>
+                ) : (
+                  <img
+                    alt=`logo de ${project.name.join(" ")}`
+                    src={`project-assets/${project.brand_src.substring(2)}`}
+                    class="h-14 w-14 rounded-full self-start"
+                  />
+                )}
 
-                  <p class="font-bold  self-start">{project.name.join(" ")}</p>
-                  <p class="text-black text-pretty">{project.description}</p>
-                  <a
-                    href={project.button_link}
-                    target="_blank"
-                    class="self-start absolute bottom-0 mb-2"
-                  >
-                    <Clickable>{project.button_text}</Clickable>
-                  </a>
-                </Clickable>
-              );
-          })
-        }
+                <p class="font-bold  self-start">{project.name.join(" ")}</p>
+                <p class="text-black text-pretty">{project.description}</p>
+                <Clickable href={project.button_link} maxWidth={false} className="self-start absolute bottom-0 mb-2">{project.button_text}</Clickable>
+              </Clickable>
+            );
+        })
+      }
       </ul>
     </div>
-
     <!-- TODO: set href -->
     <a href="">
       <Clickable className="text-1xl p-2"> Publica </Clickable>
@@ -148,17 +142,20 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   height="[80vh]"
   className="z-10"
 >
-  <div slot="content" class="flex flex-col justify-center items-center">
-    <div class="flex justify-center items-center gap-10">
-      <Clickable>Servicios</Clickable>
-      <Clickable className="mt-[50px]">Aplicaciones Multiplataforma</Clickable>
-    </div>
-    <div class="flex justify-center items-center gap-10">
-      <Clickable>Videojuegos</Clickable>
-      <Clickable className="mt-[50px]">Inteligencia Artificial</Clickable>
-    </div>
-    <div class="mt-10 justify-center items-center">
-      <Clickable>Y mucho, mucho mas</Clickable>
-    </div>
-  </div>
+  <ClickableGrid slot="content" items={[[{
+    t: 'Servicios',
+    href: 'https://github.com/flosse/rust-web-framework-comparison'
+  }, {
+    t: 'Aplicaciones Multiplataforma',
+    href: 'https://areweguiyet.com/#ecosystem'
+  }], [{
+    t: 'Videojuegos',
+    href: 'https://arewegameyet.rs/#ecosystem'
+  }, {
+    t: 'Inteligencia Artificial',
+    href: 'https://www.arewelearningyet.com/'
+  }], [{
+    t: 'Y mucho, mucho más',
+    href: 'https://awesome-rust.com/'
+  }]]} />
 </Section>

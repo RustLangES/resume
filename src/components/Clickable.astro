@@ -9,9 +9,19 @@ type Alignment =
   | "evenly"
   | "stretch";
 const {
-  className,
+  alt,
+  img,
+  href,
+  text,
+  maxWidth = true,
+  className = "",
   justify = "center",
 }: {
+  alt?: string;
+  img?: string;
+  text?: string;
+  href?: string;
+  maxWidth?: bool;
   justify?: Alignment;
   className?: string;
 } = Astro.props;
@@ -19,8 +29,9 @@ const {
 
 <style>
   .clickable {
-    @apply inline-flex items-center 
-      px-5 shadow-md border-black border-[2px];
+    @apply inline-flex items-center
+      py-2 px-4 border-black border-[2px];
+    background: #ffedd5;
     box-shadow: 5px 5px 0px 1px #000;
     transition-duration: 200ms;
   }
@@ -29,6 +40,19 @@ const {
     box-shadow: none;
   }
 </style>
-<div class=`clickable ${className} justify-${justify}`>
-  <slot />
-</div>
+
+{href &&
+  <a class=`clickable ${maxWidth ? "max-w-[150px]" : ""} ${className} justify-${justify} text-${justify}` target="_blank" href={href}>
+    {img && <img class="w-5" src={img} alt={alt} />}
+    {text && <p class="pl-5">{text}</p>}
+    <slot />
+  </a>
+}
+
+{!href &&
+  <div class=`clickable ${className} justify-${justify} text-${justify}`>
+    {img && <img class="w-5" src={img} alt={alt} />}
+    {text && <p class="pl-5">{text}</p>}
+    <slot />
+  </div>
+}

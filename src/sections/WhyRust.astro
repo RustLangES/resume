@@ -2,6 +2,7 @@
 import chart from "@assets/rust_performance.svg";
 import Clickable from "@components/Clickable.astro";
 import Section from "@layouts/section.astro";
+import ClickableGrid from "@layouts/ClickableGrid.astro";
 ---
 
 <div
@@ -43,14 +44,17 @@ import Section from "@layouts/section.astro";
   subtitle="Moderno"
   description="Todas las herramientas que necesitas, Ya incluidas en la instalación"
 >
-  <Fragment slot="content">
-    <div class="flex justify-center items-center gap-8">
-      <Clickable className="px-2 py-4"> Formatter </Clickable>
-      <Clickable className="px-2 py-4"> Gestor de paquetes </Clickable>
-    </div>
-    <div class="flex justify-center items-center gap-6">
-      <Clickable className="px-2 py-4"> Reglas para calidad </Clickable>
-      <Clickable className="px-2 py-4"> Y mucho más </Clickable>
-    </div>
-  </Fragment>
+  <ClickableGrid slot="content" items={[[{
+      t: 'Formatter',
+      href: 'https://rust-lang.github.io/rustfmt'
+    }, {
+      t: 'Gestor de Paquetes',
+      href: 'https://doc.rust-lang.org/cargo'
+    }], [{
+      t: 'Reglas para Calidad',
+      href: 'https://doc.rust-lang.org/clippy'
+    }, {
+      t: 'Y mucho más',
+      href: 'https://github.com/rust-unofficial/awesome-rust'
+    }]]} />
 </Section>
