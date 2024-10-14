@@ -10,13 +10,16 @@ const {
   subtitle,
   description,
   image,
+  image_alt,
   className,
 }: {
   type?: SectionType;
+  imageAlign?: ImageAlign;
   title?: string;
   subtitle?: string;
   description?: string;
   image?: string;
+  image_alt?: string;
   height?: string;
   className?: string;
 } = Astro.props;
@@ -34,7 +37,7 @@ const {
     )
   }
   {
-  (type === "TitleOrange") && (
+    type === "TitleOrange" && (
       <div class="flex flex-col justify-center mt-3 items-center gap-2">
         {title && <h3 class="text-[30px]">{title.toUpperCase()}</h3>}
         {subtitle && (
@@ -44,7 +47,15 @@ const {
     )
   }
 
-  {image && <img src={image} class={imageAlign == "right" ? "max-w-[70vw] ml-[30vw]" : ""} />}
+  {
+    image && (
+      <img
+        src={image}
+        class={imageAlign == "right" ? "max-w-[70vw] ml-[30vw]" : ""}
+        alt={image_alt}
+      />
+    )
+  }
   <slot name="content" />
   {
     description && (
