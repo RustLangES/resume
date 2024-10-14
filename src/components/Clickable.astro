@@ -9,6 +9,7 @@ type Alignment =
   | "evenly"
   | "stretch";
 const {
+  alt,
   img,
   href,
   text,
@@ -16,6 +17,7 @@ const {
   className = "",
   justify = "center",
 }: {
+  alt?: string;
   img?: string;
   text?: string;
   href?: string;
@@ -41,7 +43,7 @@ const {
 
 {href &&
   <a class=`clickable ${maxWidth ? "max-w-[150px]" : ""} ${className} justify-${justify} text-${justify}` target="_blank" href={href}>
-    {img && <img class="w-5" src={img} />}
+    {img && <img class="w-5" src={img} alt={alt} />}
     {text && <p class="pl-5">{text}</p>}
     <slot />
   </a>
@@ -49,7 +51,7 @@ const {
 
 {!href &&
   <div class=`clickable ${className} justify-${justify} text-${justify}`>
-    {img && <img class="w-5" src={img} />}
+    {img && <img class="w-5" src={img} alt={alt} />}
     {text && <p class="pl-5">{text}</p>}
     <slot />
   </div>

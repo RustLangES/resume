@@ -6,6 +6,7 @@ interface ClickableItem {
   text?: string;
   href?: string;
   img?: string;
+  alt?: string;
   className?: string;
 }
 
@@ -25,6 +26,7 @@ const { items, className = '' } = Astro.props;
           href={item.href}
           img={item.img}
           text={item.text}
+          alt={item.alt}
           className={`${colIndex % 2 === 1 ? 'mt-[50px]' : 'mt-[25px]'} ${item.className || ''}`}
         >
           {item.t}

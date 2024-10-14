@@ -26,20 +26,25 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   }
 </style>
 
-<div class="flex flex-col justify-center mt-3 items-center gap-2 h-[100px] sec z-10">
+<div
+  class="flex flex-col justify-center mt-3 items-center gap-2 h-[100px] sec z-10"
+>
   <h3 class="text-[30px]">AQUÍ</h3>
   <h2 class="text-orange-600 text-[50px]">PODRAS</h2>
 </div>
 <Section type="TitleOrange" height="[70vh]">
-  <div slot="content" class="flex justify-center items-center w-full h-full mt-6">
+  <div
+    slot="content"
+    class="flex justify-center items-center w-full h-full mt-6"
+  >
     <img
       src={image1.src}
-      alt="Image 1"
+      alt="Captura del libro de rust en español"
       class="flex-grow z-10 p-[20px] mb-[40px] w-72 h-[200px] lg:w-80 md:w-96"
     />
     <img
       src={image2.src}
-      alt="Image 2"
+      alt="Captura del roadmap de la comunidad"
       class="flex-grow p-[20px] ml-[-50%] mt-[40px] z-10 w-72 h-[200px] lg:w-96"
     />
   </div>
@@ -53,6 +58,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     class="flex flex-col justify-center items-center mx-6 h-[50vh]"
   >
     <iframe
+      title="Discord server"
       src="https://discord.com/widget?id=778674594856960012&theme=dark"
       width="350"
       height="500"
@@ -64,17 +70,17 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
 </Section>
 
 <Section title="Compartir" subtitle="Tus Proyectos">
-  <Fragment  slot="content">
-  <div
-    class="w-screen
+  <Fragment slot="content">
+    <div
+      class="w-screen
     min-h-[280px]
     h-[30vh]
     inline-flex
     flex-nowrap overflow-hidden
 [mask-image:_linear-gradient(to_right,transparent_0,_black_32px,_black_calc(100%-32px),transparent_100%)]"
-  >
-    <ul
-      class="flex
+    >
+      <ul
+        class="flex
     items-center
     justify-center
     animate-infinite-scroll
@@ -95,7 +101,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
                   </p>
                 ) : (
                   <img
-                    alt="icon"
+                    alt=`logo de ${project.name.join(" ")}`
                     src={`project-assets/${project.brand_src.substring(2)}`}
                     class="h-14 w-14 rounded-full self-start"
                   />
@@ -108,12 +114,12 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
             );
         })
       }
-    </ul>
-  </div>
-
-  <a href="">
-    <Clickable className="text-1xl p-2"> Publica </Clickable>
-  </a>
+      </ul>
+    </div>
+    <!-- TODO: set href -->
+    <a href="">
+      <Clickable className="text-1xl p-2"> Publica </Clickable>
+    </a>
   </Fragment>
 </Section>
 

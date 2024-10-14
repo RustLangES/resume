@@ -5,7 +5,9 @@ import Section from "@layouts/section.astro";
 import ClickableGrid from "@layouts/ClickableGrid.astro";
 ---
 
-<div class="flex flex-col justify-center mt-3 items-center gap-2 h-[100px] sec z-10">
+<div
+  class="flex flex-col justify-center mt-3 items-center gap-2 h-[100px] sec z-10"
+>
   <h3 class="text-[30px]">POR QUE</h3>
   <h2 class="text-orange-600 text-[50px]">RUST</h2>
 </div>
@@ -13,20 +15,24 @@ import ClickableGrid from "@layouts/ClickableGrid.astro";
   type="TitleOrange"
   image="rust.png"
   height="[65vh]"
+  image_alt="Logo de Rust"
 />
 <Section
   title="MUY RÁPIDO"
   image="rust_performance.svg"
+  image_alt="Gráfica comparativa"
   description="Al ser un lenguaje de sistemas, Rust tiene excelente rendimiento"
 />
 <Section
   title="Recursos"
   subtitle="Predecibles"
   image="predictability.png"
+  image_alt="Gráfica de rendimiento"
   description="Olvidate e métricas difíciles de predicir y presupuestar"
 />
 <Section
   image="secure.png"
+  image_alt="Compilador de Rust"
   imageAlign="right"
   title="Seguro"
   subtitle="Por Diseño"
