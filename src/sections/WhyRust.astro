@@ -4,39 +4,37 @@ import Clickable from "@components/Clickable.astro";
 import Section from "@layouts/section.astro";
 ---
 
+<div class="flex flex-col justify-center mt-3 items-center gap-2 h-[100px] sec z-10">
+  <h3 class="text-[30px]">POR QUE</h3>
+  <h2 class="text-orange-600 text-[50px]">RUST</h2>
+</div>
 <Section
   type="TitleOrange"
-  title="Por que"
-  subtitle="Rust"
   image="rust.png"
-  className="h-[65vh]"
+  height="[65vh]"
 />
 <Section
   title="MUY RÁPIDO"
   image="rust_performance.svg"
   description="Al ser un lenguaje de sistemas, Rust tiene excelente rendimiento"
-  className="h-screen"
 />
 <Section
   title="Recursos"
   subtitle="Predecibles"
   image="predictability.png"
   description="Olvidate e métricas difíciles de predicir y presupuestar"
-  className="h-screen"
 />
 <Section
   image="secure.png"
   title="Seguro"
   subtitle="Por Diseño"
   description="Evita muchos problemas productivos antes de imaginarlos gracias al compilador."
-  className="h-screen"
 />
 
 <Section
   title="Ecosistema"
   subtitle="Moderno"
   description="Todas las herramientas que necesitas, Ya incluidas en la instalación"
-  className="h-screen"
 >
   <Fragment slot="content">
     <div class="flex justify-center items-center gap-8">

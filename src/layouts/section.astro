@@ -3,6 +3,7 @@ type SectionType = "Normal" | "TitleOrange";
 
 const {
   type = "Normal",
+  height = "screen",
   title,
   subtitle,
   description,
@@ -14,25 +15,26 @@ const {
   subtitle?: string;
   description?: string;
   image?: string;
+  height?: string;
   className?: string;
 } = Astro.props;
 ---
 
 <div
-  class={`flex flex-col items-center justify-center py-4 gap-2 sec ${className}`}
+  class={`flex flex-col items-center justify-center gap-2 sec h-${height} ${className}`}
 >
   {
     type == "Normal" && (
-      <div class="flex flex-col justify-center mt-3 items-center gap-2">
-        <h2>{title.toUpperCase()}</h2>
+      <div class="flex flex-col justify-center items-center gap-2">
+        {title && <h2>{title.toUpperCase()}</h2>}
         {subtitle && <h3 class="text-[25px]">{subtitle.toUpperCase()}</h3>}
       </div>
     )
   }
   {
-    type == "TitleOrange" && (
+  (type === "TitleOrange") && (
       <div class="flex flex-col justify-center mt-3 items-center gap-2">
-        <h3 class="text-[30px]">{title.toUpperCase()}</h3>
+        {title && <h3 class="text-[30px]">{title.toUpperCase()}</h3>}
         {subtitle && (
           <h2 class="text-orange-600 text-[50px]">{subtitle.toUpperCase()}</h2>
         )}
@@ -40,7 +42,7 @@ const {
     )
   }
 
-  {image && <img src={image} />}
+  {image && <img src={image} class="max-h-[270px]" />}
   <slot name="content" />
   {
     description && (

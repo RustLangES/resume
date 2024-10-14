@@ -25,7 +25,11 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   }
 </style>
 
-<Section title="AQUÍ" subtitle="Podras" type="TitleOrange" className="h-[70vh]">
+<div class="flex flex-col justify-center mt-3 items-center gap-2 h-[100px] sec z-10">
+  <h3 class="text-[30px]">AQUÍ</h3>
+  <h2 class="text-orange-600 text-[50px]">PODRAS</h2>
+</div>
+<Section type="TitleOrange" height="[40vh]">
   <div slot="content" class="flex w-full h-full mt-6">
     <img
       src={image1.src}
@@ -39,7 +43,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     />
   </div>
 </Section>
-<Section title="Aprender" className="h-[50vh]">
+<Section title="Aprender" height="[70vh]">
   <Fragment slot="content">
     <!-- First row -->
     <div class="flex justify-center items-center gap-8">
@@ -54,10 +58,10 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     </div>
   </Fragment>
 </Section>
-<Section title="Conectar" subtitle="y ser parte" className="h-screen">
+<Section title="Conectar" subtitle="y ser parte">
   <div
     slot="content"
-    class="flex flex-col justify-center items-center my-10 mx-6 h-[60vh]"
+    class="flex flex-col justify-center items-center mx-6 h-[50vh]"
   >
     <iframe
       src="https://discord.com/widget?id=778674594856960012&theme=dark"
@@ -70,10 +74,8 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   </div>
 </Section>
 
-<div class="flex flex-col items-center sec pt-10 h-[70vh]">
-  <h2>COMPARTIR</h2>
-  <h3>TUS PROYECTOS</h3>
-
+<Section title="Compartir" subtitle="Tus Proyectos">
+  <Fragment  slot="content">
   <div
     class="w-screen
     min-h-[280px]
@@ -129,15 +131,17 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   <a href="">
     <Clickable className="text-1xl p-2"> Publica </Clickable>
   </a>
-</div>
+  </Fragment>
+</Section>
 
 <Section
   title="Crear"
   subtitle="Sin Limites"
   description="Quizas Todavia te preguntes Que Puedes Crear con Rust, La Respuesta Corta, Todo Lo Que Quieras."
-  className="h-[80vh]"
+  height="[80vh]"
+  className="z-10"
 >
-  <div slot="content" class="flex flex-col justify-center items-center mt-10">
+  <div slot="content" class="flex flex-col justify-center items-center">
     <div class="flex justify-center items-center gap-10">
       <Clickable>Servicios</Clickable>
       <Clickable className="mt-[50px]">Aplicaciones Multiplataforma</Clickable>
