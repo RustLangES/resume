@@ -102,11 +102,12 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     >
       {
         [...prebuiltData, ...prebuiltData].map((project: Project) => {
-          if (project.button_text.length > 0)
+          if (project.name.length > 0)
             return (
               <Clickable
-                className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2 md:w-60"
                 justify="start"
+                maxWidth={false}
+                className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2 md:w-60"
               >
                 {project.brand_as_letter ? (
                   <p class="flex flex-row justify-center items-center h-14 w-14 rounded-full self-start bg-[#ffedd5]">
@@ -114,7 +115,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
                   </p>
                 ) : (
                   <img
-                    alt=`logo de ${project.name.join(" ")}`
+                    alt={`logo de ${project.name.join(" ")}`}
                     src={`project-assets/${project.brand_src.substring(2)}`}
                     class="h-14 w-14 rounded-full self-start"
                   />
@@ -122,7 +123,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
 
                 <p class="font-bold self-start">{project.name.join(" ")}</p>
                 <p class="text-black text-pretty self-start">{project.description}</p>
-                <Clickable href={project.button_link} maxWidth={false} className="self-start absolute bottom-0 mb-2">{project.button_text}</Clickable>
+                <Clickable href={project.link} maxWidth={false} className="self-start absolute bottom-0 mb-2">{project.button_text || "Enlace del Proyecto"}</Clickable>
               </Clickable>
             );
         })
@@ -130,8 +131,8 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
       </ul>
     </div>
     <!-- TODO: set href -->
-    <a href="">
-      <Clickable className="text-1xl p-2"> Publica </Clickable>
+    <a href="https://discord.gg/rustlanges">
+      <Clickable className="text-1xl p-2">Publica</Clickable>
     </a>
   </Fragment>
 </Section>
