@@ -40,12 +40,12 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     <img
       src={image1.src}
       alt="Captura del libro de rust en español"
-      class="flex-grow z-10 p-[20px] mb-[40px] w-72 h-[200px] lg:w-80 md:w-96"
+      class="flex-grow z-10 p-[20px] mb-[40px] w-72  lg:w-80 md:w-96"
     />
     <img
       src={image2.src}
       alt="Captura del roadmap de la comunidad"
-      class="flex-grow p-[20px] ml-[-50%] mt-[40px] z-10 w-72 h-[200px] lg:w-96"
+      class="flex-grow p-[20px] ml-[-50%] mt-[40px] z-10 w-72  lg:w-96"
     />
   </div>
 </Section>
@@ -77,7 +77,8 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
       allowtransparency="true"
       frameborder="0"
       sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    ></iframe>
+      class="md:w-[50vw] h-[60vh]"
+      ></iframe>
   </div>
 </Section>
 
@@ -89,7 +90,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     h-[30vh]
     inline-flex
     flex-nowrap overflow-hidden
-[mask-image:_linear-gradient(to_right,transparent_0,_black_32px,_black_calc(100%-32px),transparent_100%)]"
+[mask-image:_linear-gradient(to_right,transparent_0,_black_32px,_black_calc(100%-32px),transparent_100%)] md:h-[40vh]"
     >
       <ul
         class="flex
@@ -104,7 +105,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
           if (project.button_text.length > 0)
             return (
               <Clickable
-                className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2"
+                className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2 md:w-60"
                 justify="start"
               >
                 {project.brand_as_letter ? (
@@ -119,8 +120,8 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
                   />
                 )}
 
-                <p class="font-bold  self-start">{project.name.join(" ")}</p>
-                <p class="text-black text-pretty">{project.description}</p>
+                <p class="font-bold self-start">{project.name.join(" ")}</p>
+                <p class="text-black text-pretty self-start">{project.description}</p>
                 <Clickable href={project.button_link} maxWidth={false} className="self-start absolute bottom-0 mb-2">{project.button_text}</Clickable>
               </Clickable>
             );
