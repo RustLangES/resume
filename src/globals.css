@@ -55,10 +55,16 @@ iframe {
 }
 
 footer {
-    background: #FFCE9A;
+  background: #ffce9a;
 }
 
 .sec {
   @apply sticky top-0;
   background: var(--background);
+}
+
+@media only screen and (min-width: 768px) {
+  .sec {
+    position: relative;
+  }
 }
