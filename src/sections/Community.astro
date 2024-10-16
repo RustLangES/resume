@@ -30,7 +30,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
   class="flex flex-col justify-center mt-3 items-center gap-2 h-[100px] sec z-10"
 >
   <h3 class="text-[30px]">AQUÍ</h3>
-  <h2 class="text-orange-600 text-[50px]">PODRAS</h2>
+  <h2 class="text-orange-600 text-[50px]">PODRÁS</h2>
 </div>
 <Section type="TitleOrange" height="[70vh]">
   <div
@@ -40,29 +40,41 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     <img
       src={image1.src}
       alt="Captura del libro de rust en español"
-      class="flex-grow z-10 p-[20px] mb-[40px] w-72  lg:w-80 md:w-96"
+      class="flex-grow z-10 p-[20px] mb-[40px] w-72 lg:w-80 md:w-96"
     />
     <img
       src={image2.src}
       alt="Captura del roadmap de la comunidad"
-      class="flex-grow p-[20px] ml-[-50%] mt-[40px] z-10 w-72  lg:w-96"
+      class="flex-grow p-[20px] ml-[-50%] mt-[40px] z-10 w-72 lg:w-96"
     />
   </div>
 </Section>
 <Section title="Aprender">
-  <ClickableGrid slot="content" items={[[{
-    t: "Roadmap",
-    href: 'https://roadmap.rustlang-es.org'
-  }, {
-    t: "El Libro",
-    href: 'https://book.rustlang-es.org'
-  }], [{
-    t: "Rust para c# Developers",
-    href: 'https://dotnet-book.rustlang-es.org'
-  }, {
-    t: "Mas",
-    href: 'https://rustlang-es.org/aprende'
-  }]]} />
+  <ClickableGrid
+    slot="content"
+    items={[
+      [
+        {
+          t: "Roadmap",
+          href: "https://roadmap.rustlang-es.org",
+        },
+        {
+          t: "El Libro",
+          href: "https://book.rustlang-es.org",
+        },
+      ],
+      [
+        {
+          t: "Rust para c# Developers",
+          href: "https://dotnet-book.rustlang-es.org",
+        },
+        {
+          t: "Más",
+          href: "https://rustlang-es.org/aprende",
+        },
+      ],
+    ]}
+  />
 </Section>
 <Section title="Conectar" subtitle="y ser parte">
   <div
@@ -77,8 +89,7 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
       allowtransparency="true"
       frameborder="0"
       sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-      class="md:w-[50vw] h-[60vh]"
-      ></iframe>
+      class="md:w-[50vw] h-[60vh]"></iframe>
   </div>
 </Section>
 
@@ -98,36 +109,44 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     justify-center
     animate-infinite-scroll
     p-5"
-      id="projects-container"
-    >
-      {
-        [...prebuiltData, ...prebuiltData].map((project: Project) => {
-          if (project.name.length > 0)
-            return (
-              <Clickable
-                justify="start"
-                maxWidth={false}
-                className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2 md:w-60"
-              >
-                {project.brand_as_letter ? (
-                  <p class="flex flex-row justify-center items-center h-14 w-14 rounded-full self-start bg-[#ffedd5]">
-                    {project.brand_src}
-                  </p>
-                ) : (
-                  <img
-                    alt={`logo de ${project.name.join(" ")}`}
-                    src={`project-assets/${project.brand_src.substring(2)}`}
-                    class="h-14 w-14 rounded-full self-start"
-                  />
-                )}
+        id="projects-container"
+      >
+        {
+          [...prebuiltData, ...prebuiltData].map((project: Project) => {
+            if (project.name.length > 0)
+              return (
+                <Clickable
+                  justify="start"
+                  maxWidth={false}
+                  className="relative flex flex-col mx-3 w-[85vw] h-full flex-shrink-0 p-2 md:w-60"
+                >
+                  {project.brand_as_letter ? (
+                    <p class="flex flex-row justify-center items-center h-14 w-14 rounded-full self-start bg-[#ffedd5]">
+                      {project.brand_src}
+                    </p>
+                  ) : (
+                    <img
+                      alt={`logo de ${project.name.join(" ")}`}
+                      src={`project-assets/${project.brand_src.substring(2)}`}
+                      class="h-14 w-14 rounded-full self-start"
+                    />
+                  )}
 
-                <p class="font-bold self-start">{project.name.join(" ")}</p>
-                <p class="text-black text-pretty self-start">{project.description}</p>
-                <Clickable href={project.link} maxWidth={false} className="self-start absolute bottom-0 mb-2">{project.button_text || "Enlace del Proyecto"}</Clickable>
-              </Clickable>
-            );
-        })
-      }
+                  <p class="font-bold self-start">{project.name.join(" ")}</p>
+                  <p class="text-black text-pretty self-start">
+                    {project.description}
+                  </p>
+                  <Clickable
+                    href={project.link}
+                    maxWidth={false}
+                    className="self-start absolute bottom-0 mb-2"
+                  >
+                    {project.button_text || "Enlace del Proyecto"}
+                  </Clickable>
+                </Clickable>
+              );
+          })
+        }
       </ul>
     </div>
     <!-- TODO: set href -->
@@ -139,25 +158,40 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
 
 <Section
   title="Crear"
-  subtitle="Sin Limites"
-  description="Quizas Todavia te preguntes Que Puedes Crear con Rust, La Respuesta Corta, Todo Lo Que Quieras."
+  subtitle="Sin Límites"
+  description="Quizás todavia te preguntes ¿Qué puedes crear con Rust?, la respuesta corta: Todo lo que quieras."
   height="[90vh]"
   className="z-10"
 >
-  <ClickableGrid slot="content" items={[[{
-    t: 'Servicios',
-    href: 'https://github.com/flosse/rust-web-framework-comparison'
-  }, {
-    t: 'Aplicaciones Multiplataforma',
-    href: 'https://areweguiyet.com/#ecosystem'
-  }], [{
-    t: 'Videojuegos',
-    href: 'https://arewegameyet.rs/#ecosystem'
-  }, {
-    t: 'Inteligencia Artificial',
-    href: 'https://www.arewelearningyet.com/'
-  }], [{
-    t: 'Y mucho, mucho más',
-    href: 'https://awesome-rust.com/'
-  }]]} />
+  <ClickableGrid
+    slot="content"
+    items={[
+      [
+        {
+          t: "Servicios",
+          href: "https://github.com/flosse/rust-web-framework-comparison",
+        },
+        {
+          t: "Aplicaciones Multiplataforma",
+          href: "https://areweguiyet.com/#ecosystem",
+        },
+      ],
+      [
+        {
+          t: "Videojuegos",
+          href: "https://arewegameyet.rs/#ecosystem",
+        },
+        {
+          t: "Inteligencia Artificial",
+          href: "https://www.arewelearningyet.com/",
+        },
+      ],
+      [
+        {
+          t: "Y mucho, mucho más",
+          href: "https://awesome-rust.com/",
+        },
+      ],
+    ]}
+  />
 </Section>

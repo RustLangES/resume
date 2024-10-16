@@ -1,6 +1,4 @@
 ---
-import Clickable from "@components/Clickable.astro";
-
 import github_svg from "@assets/github.svg";
 import discord_svg from "@assets/discord.svg";
 import linkeding_svg from "@assets/Linkedin.svg";
@@ -9,34 +7,45 @@ import telegram_svg from "@assets/Telegram.svg";
 import ClickableGrid from "@layouts/ClickableGrid.astro";
 ---
 
-<footer class="relative z-10 flex flex-col justify-start pt-10 items-center w-full h-[80vh]">
+<footer
+  class="relative z-10 flex flex-col justify-start pt-10 items-center w-full h-[80vh]"
+>
   <p class="text-[30px] from-neutral-500 font-medium">Se parte de la</p>
   <h2 class="text-[35px] text-orange-500">Comunidad</h2>
   <p class="mt-10 font-medium text-xl">Y Descubre Como La</p>
   <p class="font-medium text-xl">Comunidad Esta integrando</p>
   <p class="font-medium text-xl">Rust en Distintas Areas</p>
-  <ClickableGrid className="my-24" items={[
-    [{
-      text: 'Github',
-      img: github_svg.src,
-      alt: "Logo de github",
-      href: 'https://github.com/RustLangES'
-    }, {
-      text: 'Discord',
-      img: discord_svg.src,
-      alt: "Logo de discord",
-      href: 'https://discord.gg/rustlanges'
-    }],
-    [{
-      text: 'Linkedin',
-      img: linkeding_svg.src,
-      alt: "Logo de linkedin",
-      href: 'https://linkedin.com/company/RustLangES'
-    }, {
-      text: 'Telegram',
-      img: telegram_svg.src,
-      alt: "Logo de telegram",
-      href: 'https://t.me/rust_es'
-    }]
-  ]} />
+  <ClickableGrid
+    className="my-24"
+    items={[
+      [
+        {
+          text: "Github",
+          img: github_svg.src,
+          alt: "Logo de github",
+          href: "https://github.com/RustLangES",
+        },
+        {
+          text: "Discord",
+          img: discord_svg.src,
+          alt: "Logo de discord",
+          href: "https://discord.gg/rustlanges",
+        },
+      ],
+      [
+        {
+          text: "Linkedin",
+          img: linkeding_svg.src,
+          alt: "Logo de linkedin",
+          href: "https://linkedin.com/company/RustLangES",
+        },
+        {
+          text: "Telegram",
+          img: telegram_svg.src,
+          alt: "Logo de telegram",
+          href: "https://t.me/rust_es",
+        },
+      ],
+    ]}
+  />
 </footer>

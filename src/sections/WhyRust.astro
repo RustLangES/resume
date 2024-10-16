@@ -1,6 +1,4 @@
 ---
-import chart from "@assets/rust_performance.svg";
-import Clickable from "@components/Clickable.astro";
 import Section from "@layouts/section.astro";
 import ClickableGrid from "@layouts/ClickableGrid.astro";
 ---
@@ -28,7 +26,7 @@ import ClickableGrid from "@layouts/ClickableGrid.astro";
   subtitle="Predecibles"
   image="predictability.png"
   image_alt="Gráfica de rendimiento"
-  description="Olvidate e métricas difíciles de predicir y presupuestar"
+  description="Olvidate de métricas difíciles de predecir y presupuestar"
 />
 <Section
   image="secure.png"
@@ -36,25 +34,37 @@ import ClickableGrid from "@layouts/ClickableGrid.astro";
   imageAlign="right"
   title="Seguro"
   subtitle="Por Diseño"
-  description="Evita muchos problemas productivos antes de imaginarlos gracias al compilador."
+  description="Evita muchos problemas productivos antes de imaginárlos gracias al compilador."
 />
 
 <Section
   title="Ecosistema"
   subtitle="Moderno"
-  description="Todas las herramientas que necesitas, Ya incluidas en la instalación"
+  description="Todas las herramientas que necesitas, ya incluidas en la instalación"
 >
-  <ClickableGrid slot="content" items={[[{
-      t: 'Formatter',
-      href: 'https://rust-lang.github.io/rustfmt'
-    }, {
-      t: 'Gestor de Paquetes',
-      href: 'https://doc.rust-lang.org/cargo'
-    }], [{
-      t: 'Reglas para Calidad',
-      href: 'https://doc.rust-lang.org/clippy'
-    }, {
-      t: 'Y mucho más',
-      href: 'https://github.com/rust-unofficial/awesome-rust'
-    }]]} />
+  <ClickableGrid
+    slot="content"
+    items={[
+      [
+        {
+          t: "Formatter",
+          href: "https://rust-lang.github.io/rustfmt",
+        },
+        {
+          t: "Gestor de Paquetes",
+          href: "https://doc.rust-lang.org/cargo",
+        },
+      ],
+      [
+        {
+          t: "Reglas para Calidad",
+          href: "https://doc.rust-lang.org/clippy",
+        },
+        {
+          t: "Y mucho más",
+          href: "https://github.com/rust-unofficial/awesome-rust",
+        },
+      ],
+    ]}
+  />
 </Section>
