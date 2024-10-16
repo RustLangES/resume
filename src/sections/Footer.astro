@@ -4,19 +4,18 @@ import discord_svg from "@assets/discord.svg";
 import linkeding_svg from "@assets/Linkedin.svg";
 import telegram_svg from "@assets/Telegram.svg";
 
+import Clickable from "@components/Clickable.astro";
 import ClickableGrid from "@layouts/ClickableGrid.astro";
 ---
 
 <footer
-  class="relative z-10 flex flex-col justify-start pt-10 items-center w-full h-[80vh]"
+  class="relative z-10 flex flex-col justify-start pt-10 items-center w-full"
 >
   <p class="text-[30px] from-neutral-500 font-medium">Se parte de la</p>
   <h2 class="text-[35px] text-orange-500">Comunidad</h2>
-  <p class="mt-10 font-medium text-xl">Y Descubre Como La</p>
-  <p class="font-medium text-xl">Comunidad Esta integrando</p>
-  <p class="font-medium text-xl">Rust en Distintas Areas</p>
+  <p class="mt-10 font-medium text-xl text-center">Y Descubre Como La</br> Comunidad Esta integrando</br> Rust en Distintas Areas</p>
   <ClickableGrid
-    className="my-24"
+    className="mt-12 mb-20"
     items={[
       [
         {
@@ -48,4 +47,9 @@ import ClickableGrid from "@layouts/ClickableGrid.astro";
       ],
     ]}
   />
+
+  <section class="flex flex-col gap-4 px-8 pb-16">
+    <p class="text-lg text-center">Si te gustaria colaborar con nosotros o te gustaria recibir asistencia personalizada contactanos al siguiente correo</p>
+    <Clickable maxWidth={false} href="mailto:contact@rustlang-es.org">contact@rustlang-es.org</Clickable>
+  </section>
 </footer>
