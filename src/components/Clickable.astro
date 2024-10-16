@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 type Alignment =
   | "end"
   | "start"
@@ -43,7 +45,7 @@ const {
 
 {href &&
   <a class={`clickable ${maxWidth ? "max-w-[150px]" : ""} ${className} justify-${justify} text-${justify}`} target="_blank" href={href}>
-    {img && <img class="w-5" src={img} alt={alt} />}
+    {img && <Image class="w-5" src={img} alt={alt} />}
     {text && <p class="pl-5">{text}</p>}
     <slot />
   </a>
@@ -51,7 +53,7 @@ const {
 
 {!href &&
   <div class={`clickable ${className} justify-${justify} text-${justify}`}>
-    {img && <img class="w-5" src={img} alt={alt} />}
+    {img && <Image class="w-5" src={img} alt={alt} />}
     {text && <p class="pl-5">{text}</p>}
     <slot />
   </div>

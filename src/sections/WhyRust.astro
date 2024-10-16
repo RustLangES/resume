@@ -1,6 +1,11 @@
 ---
 import Section from "@layouts/section.astro";
 import ClickableGrid from "@layouts/ClickableGrid.astro";
+
+import rust from "@assets/rust.png";
+import rust_performance from "@assets/rust_performance.svg";
+import predictability from "@assets/predictability.png";
+import secure from "@assets/secure.png";
 ---
 
 <div
@@ -11,25 +16,25 @@ import ClickableGrid from "@layouts/ClickableGrid.astro";
 </div>
 <Section
   type="TitleOrange"
-  image="rust.png"
+  image={rust}
   height="[65vh]"
   image_alt="Logo de Rust"
 />
 <Section
   title="MUY RÁPIDO"
-  image="rust_performance.svg"
+  image={rust_performance}
   image_alt="Gráfica comparativa"
   description="Al ser un lenguaje de sistemas, Rust tiene excelente rendimiento"
 />
 <Section
   title="Recursos"
   subtitle="Predecibles"
-  image="predictability.png"
+  image={predictability}
   image_alt="Gráfica de rendimiento"
   description="Olvidate de métricas difíciles de predecir y presupuestar"
 />
 <Section
-  image="secure.png"
+  image={secure}
   image_alt="Compilador de Rust"
   imageAlign="right"
   title="Seguro"

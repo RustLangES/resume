@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 type SectionType = "Normal" | "TitleOrange";
 type ImageAlign = "center" | "right";
 
@@ -49,7 +51,7 @@ const {
 
   {
     image && (
-      <img
+      <Image
         src={image}
         class={imageAlign == "right" ? "max-w-[70vw] self-end" : ""}
         alt={image_alt}

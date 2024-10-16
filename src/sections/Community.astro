@@ -1,10 +1,13 @@
 ---
-import image1 from "../../public/rust_book.png";
-import image2 from "../../public/road_map.png";
-import Clickable from "../components/Clickable.astro";
+import { readTOMLFiles } from "@utils/readProjects";
+
+import { Image } from 'astro:assets';
+import Clickable from "@components/Clickable.astro";
 import Section from "@layouts/section.astro";
 import ClickableGrid from "@layouts/ClickableGrid.astro";
-import { readTOMLFiles } from "../utils/readProjects";
+
+import image1 from "@assets/rust_book.png";
+import image2 from "@assets/road_map.png";
 
 interface Project {
   name: string[];
@@ -37,13 +40,13 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
     slot="content"
     class="flex justify-center items-center w-full h-full mt-6 overflow-x-hidden"
   >
-    <img
-      src={image1.src}
+    <Image
+      src={image1}
       alt="Captura del libro de rust en español"
       class="flex-grow z-10 p-[20px] mb-[40px] w-72 lg:w-80 md:w-96"
     />
-    <img
-      src={image2.src}
+    <Image
+      src={image2}
       alt="Captura del roadmap de la comunidad"
       class="flex-grow p-[20px] ml-[-50%] mt-[40px] z-10 w-72 lg:w-96"
     />
@@ -126,6 +129,8 @@ const prebuiltData = await readTOMLFiles("proyectos-comunitarios/proyectos");
                     </p>
                   ) : (
                     <img
+                      decoding="async"
+                      loading="lazy"
                       alt={`logo de ${project.name.join(" ")}`}
                       src={`project-assets/${project.brand_src.substring(2)}`}
                       class="h-14 w-14 rounded-full self-start"
