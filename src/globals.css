@@ -10,32 +10,39 @@
 }
 
 @font-face {
-  font-family: "Alfa Slab One";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('fonts/AlfaSlabOne-Regular.woff2') format("woff2");
+    font-family: 'Work Sans';
+    src: url('/fonts/WorkSans-SemiBold.woff2') format('woff2'),
+        url('/fonts/WorkSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('fonts/Work-Sans-Regular.woff2') format('woff2');
+    font-family: 'Alfa Slab One';
+    src: url('/fonts/AlfaSlabOne-Regular.woff2') format('woff2'),
+        url('/fonts/AlfaSlabOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-  font-family: 'Work Sans';
-  font-style: medium;
-  font-weight: 500;
-  font-display: swap;
-  src: url('fonts/Work-Sans-500.woff2') format('woff2');
+    font-family: 'Work Sans';
+    src: url('/fonts/WorkSans-Regular.woff2') format('woff2'),
+        url('/fonts/WorkSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-  font-family: 'Work Sans';
-  font-style: semibold;
-  font-weight: 600;
-  font-display: swap;
-  src: url('fonts/Work-Sans-600.woff2') format('woff2');
+    font-family: 'Work Sans';
+    src: url('/fonts/WorkSans-Medium.woff2') format('woff2'),
+        url('/fonts/WorkSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
